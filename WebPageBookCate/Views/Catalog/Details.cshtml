@@ -1,0 +1,50 @@
+﻿@model WebPageBookCate.Models.Book
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="row">
+        <div class="col-4">
+        <img src="@Model.ImageUrl" class="w-100" />
+    </div>
+    <div class="col-5">
+
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(book => book.Title)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(book => book.Title)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(book => book.Author)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(book => book.Author)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(book => book.DatePublished)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(book => book.DatePublished)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(book => book.Description)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(book => book.Description)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
+            <a asp-controller="List" asp-action="AddToList" asp-route-id="@Model.Id" class="btn btn-primary store-btn float-right mr-5"> <i class="fa-solid fa-list"></i> Add To My List</a>
+        </div>
+    </div>
+</div>
