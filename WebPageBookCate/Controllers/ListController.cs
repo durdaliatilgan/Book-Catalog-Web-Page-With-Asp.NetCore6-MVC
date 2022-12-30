@@ -5,7 +5,6 @@ using WebPageBookCate.Models;
 
 namespace WebPageBookCate.Controllers
 {
-    //[Authorize]
     public class ListController : Controller
     {
         private readonly WebPageBookCateContext _context;
@@ -16,7 +15,7 @@ namespace WebPageBookCate.Controllers
             _context = context;
             _userList = userList;
         }
-
+         [Authorize]
         public IActionResult Index()
         {
             var items = _userList.GetAllListItems();

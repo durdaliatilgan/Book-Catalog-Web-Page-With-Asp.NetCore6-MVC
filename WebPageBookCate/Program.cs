@@ -16,7 +16,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<WebPageBookCateContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebPageBookCateContext") ?? throw new InvalidOperationException("Connection string 'WebPageBookCateContext' not found.")));
 
-builder.Services.AddDefaultIdentity<DefaultUser>().AddEntityFrameworkStores<WebPageBookCateContext>();
+builder.Services.AddDefaultIdentity<DefaultUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<WebPageBookCateContext>();
 
 //builder.Services.AddDefaultIdentity<DefaultUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<WebPageBookCateContext>();
 
