@@ -5,7 +5,7 @@ using WebPageBookCate.Models;
 
 namespace WebPageBookCate.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ListController : Controller
     {
         private readonly WebPageBookCateContext _context;

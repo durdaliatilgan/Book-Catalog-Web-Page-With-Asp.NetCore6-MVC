@@ -1,45 +1,66 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebPageBookCate</title>
+
+
+ 
+    <link rel="stylesheet" href="~/fonts1/icomoon/style.css">
+    <link rel="stylesheet" href="~/css1/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css1/magnific-popup.css">
+    <link rel="stylesheet" href="~/css1/jquery-ui.css">
+    <link rel="stylesheet" href="~/css1/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css1/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css1/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/fonts1/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/css1/aos.css">
+    <link rel="stylesheet" href="~/css1/style.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/fonts/css/all.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebPageBookCate.styles.css" asp-append-version="true" />
     
-
-
-
 </head>
 <body>
-    <header>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebPageBookCate</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item">
+    <header class="site-navbar" role="banner">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+
+                <div class="col-12 search-form-wrap js-search-form">
+                    <form method="get" action="#">
+                        <input type="text" id="s" class="form-control" placeholder="Search...">
+                        <button class="search-btn" type="submit"><span class="icon-search"></span></button>
+                    </form>
+                </div>
+
+
+                
+                <div class="col-12 text-right">
+                    <nav class="site-navigation" role="navigation">
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+                            
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Catalog" asp-action="Index">Catalog</a>
-     
-                </ul>
-                <partial name="_LoginPartial" />
-                <form class="d-flex">
-                    <button class="btn btn-outline-dark" type="submit">
-                        <i class="bi-cart-fill me-1"></i>
-                        <a class="text-dark" asp-controller="List" asp-action="Index">My List</a>
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button>
-                </form>
+                            <partial name="_LoginPartial" />
+                            <li class="nav-item">  <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                                <button class="btn btn-outline-dark" type="submit">
+                                    <i class="bi-cart-fill me-1"></i>
+                                    <a class="text-dark" asp-controller="List" asp-action="Index">My List</a>
+                                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                                </button>
+                            <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a>
+                </div>
             </div>
+            
         </div>
-    </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -47,10 +68,25 @@
     </div>
 
        <!-- Footer-->
-    
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-    </footer>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="row mb-1">
+
+                <div class="col-md-8">
+
+                    <h3 class="footer-heading mb-4">Connect With Us</h3>
+                    <p>
+                        <a href="#"><span class="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
+                        <a href="#"><span class="icon-twitter p-2"></span></a>
+                        <a href="#"><span class="icon-instagram p-2"></span></a>                    
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

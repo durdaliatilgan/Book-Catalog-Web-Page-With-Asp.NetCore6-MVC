@@ -19,7 +19,5 @@ namespace WebPageBookCate.Data
 
         public DbSet<ListItem> ListItems { get; set; }
 
-        public DbSet<BlogPost> BlogPost { get; set; }
-        public DbSet<Comments> Comment { get; set; }
     }
 }

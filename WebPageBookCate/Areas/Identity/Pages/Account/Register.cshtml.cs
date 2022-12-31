@@ -83,8 +83,7 @@ namespace WebPageBookCate.Areas.Identity.Pages.Account
             public string LastName { get; set; }
 
             [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
+            [RegularExpression("^[a-zA-Z0-9_\\.-]+@sakarya\\.edu\\.tr", ErrorMessage = "Email is not valid")]
             public string Email { get; set; }
 
             [Required]
