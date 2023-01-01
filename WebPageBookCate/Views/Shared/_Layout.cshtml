@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
+@inject LanguageService language
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,16 +42,18 @@
                     <nav class="site-navigation" role="navigation">
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                             
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@language.Getkey("Home")</a>
                             <partial name="_LoginPartial" />
-                            <li class="nav-item">  <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Catalog" asp-action="Index">Catalog</a>
-                                <button class="btn btn-outline-dark" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    <a class="text-dark" asp-controller="List" asp-action="Index">My List</a>
-                                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                                </button>
-                            <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
+                            <li class="nav-item">  <a class="nav-link" asp-area="" asp-controller="Books" asp-action="Index">@language.Getkey("Books")</a>
+                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Catalog" asp-action="Index">@language.Getkey("Catalog")</a>
+           
+                            <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="nav-link"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+                            <li><a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-Tr" class="nav-link"><i class="flag-icon flag-icon-de"></i> Turkish</a></li>
+                            <button class="btn btn-outline-dark" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                <a class="text-dark" asp-controller="List" asp-action="Index">@language.Getkey("My List")</a>
+                                <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+                            </button>
                         </ul>
                     </nav>
                     <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a>
@@ -75,11 +77,12 @@
 
                 <div class="col-md-8">
 
-                    <h3 class="footer-heading mb-4">Connect With Us</h3>
+                    <h3 class="footer-heading mb-4">@language.Getkey("Connect With Us")</h3>
                     <p>
-                        <a href="#"><span class="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
-                        <a href="#"><span class="icon-twitter p-2"></span></a>
-                        <a href="#"><span class="icon-instagram p-2"></span></a>                    
+                        <a href="https://www.facebook.com/"><span class="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
+                        <a href="https://twitter.com/"><span class="icon-twitter p-2"></span></a>
+                        <a href="https://www.instagram.com/"><span class="icon-instagram p-2"></span></a> 
+                        <a href="https://tr.linkedin.com/in/durdaliatilgan"><span class="icon-linkedin p-2"></span></a>
                     </p>
                     
                 </div>

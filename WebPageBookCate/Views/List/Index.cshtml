@@ -4,14 +4,16 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+@inject LanguageService language
 @if (Model.ListItems.Count > 0)
 {
     <table class="table">
         <thead>
             <tr>
                 <th></th>
-                <th>Book</th>
-                <th>Remove</th>
+                <th>@language.Getkey("Book")</th>
+                <th>@language.Getkey("Remove")</th>
             </tr>
         </thead>
         <tbody>
@@ -26,26 +28,16 @@
                         <a class="a-cleanup" asp-controller="Catalog" asp-action="Details" asp-route-id="@item.Id">@item.Book.Title</a>
                     </td>
                     <td>
-                        <a asp-controller="List" asp-action="RemoveFromList" asp-route-id="@item.Book.Id" class="text-danger"><i class="fa-solid fa-trash"></i>Delete</a>
+                        <a asp-controller="List" asp-action="RemoveFromList" asp-route-id="@item.Book.Id" class="text-danger"><i class="fa-solid fa-trash"></i>@language.Getkey("Delete")</a>
                     </td>
                 </tr>
             }
         </tbody>
-        <tfoot>
-            <tr>
-                <td></td>
-                <td class="text-right">
-                    <strong>Total:</strong>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tfoot>
     </table>
 
-    <a class="a-cleanup" asp-controller="List" asp-action="ClearList"><div class="btn btn-danger float-right mr-5"><i class="fa-solid fa-trash-can"></i> Empty UserList</div> </a>
+    <a class="a-cleanup" asp-controller="List" asp-action="ClearList"><div class="btn btn-danger float-right mr-5"><i class="fa-solid fa-trash-can"></i> @language.Getkey("Empty UserList")</div> </a>
 }
 else
 {
-    <h3 class="text-center">UserList is empty</h3>
+    <h3 class="text-center">@language.Getkey("UserList is empty")</h3>
 }

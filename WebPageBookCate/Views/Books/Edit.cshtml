@@ -3,10 +3,9 @@
 @{
     ViewData["Title"] = "Edit";
 }
+@inject LanguageService language
+<h1>@language.Getkey("Edit")</h1>
 
-<h1>Edit</h1>
-
-<h4>Book</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,39 +13,44 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">
+                    @language.Getkey("Title")</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">
+                    @language.Getkey("Description")</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DatePublished" class="control-label"></label>
+                <label asp-for="DatePublished" class="control-label">
+                    @language.Getkey("Date Published")</label>
                 <input asp-for="DatePublished" class="form-control" />
                 <span asp-validation-for="DatePublished" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
+                <label asp-for="Author" class="control-label">
+                    @language.Getkey("Author")</label>
                 <input asp-for="Author" class="form-control" />
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
+                <label asp-for="ImageUrl" class="control-label">
+                    @language.Getkey("Image URL")</label>
                 <input asp-for="ImageUrl" class="form-control" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" /> 
+                <input type="submit" value=@language.Getkey("Save") class="btn btn-primary" /> 
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" class="btn btn-light"><i class="fa-solid fa-backward"></i>Back To List</a>
+    <a asp-action="Index" class="btn btn-light"><i class="fa-solid fa-backward"></i>@language.Getkey("Back To List")</a>
 </div>
 
 @section Scripts {

@@ -16,26 +16,24 @@
         }
     }
 }
+@inject LanguageService language
 <p>
-    <a asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-book-blank"></i>Add New Book</a>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-book-blank"></i>@language.Getkey("Create")</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+               @language.Getkey(@Html.DisplayNameFor(model => model.Title))
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author)
+                @language.Getkey(@Html.DisplayNameFor(model => model.Author))
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @language.Getkey(@Html.DisplayNameFor(model => model.Description))
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DatePublished)
-            </th>
-            <th>
-               Image
+                @language.Getkey(@Html.DisplayNameFor(model => model.DatePublished))
             </th>
             <th></th>
         </tr>
@@ -56,11 +54,12 @@
                 @Html.DisplayFor(modelItem => item.DatePublished)
             </td>
             <td>
-                    <i class="@HasImage(item)"></i>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a> 
+             </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success"><i class="fa-solid fa-circle-info"></i></a> 
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a> 
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success"><i class="fa-solid fa-circle-info"></i></a> 
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
