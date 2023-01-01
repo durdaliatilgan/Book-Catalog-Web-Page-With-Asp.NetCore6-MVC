@@ -1,0 +1,15 @@
+Bu proje .Net Core MVC 6 FremaWork Kullanılarak Web Programlama dersi projesi kapsamında geliştirilmiştir.
+Projede Kullanılan Teknolojiler
+- Asp.Net Core 6 MVC yada Asp.Net Core 7 MVC
+- C#
+- Veritabanı olarak SQL Server /PostgreSQL/ vb
+- Entity Framework Core ORM
+- Bootstrap Tema
+- HTML5, CSS3, Javascript ve JQUERY
+Proje İçeriği
+- Front-end 
+- Kullanıcı üyeliği
+- Admin ve kayıtlı üye 
+- Authorization 
+- Çok dilli (Türkçe/İngilizce) 
+- Veri tabanınındaki sorgulamarda LINQ kullanımı
